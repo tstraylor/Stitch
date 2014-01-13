@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2162991882DEAC002575CC /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2162981882DEAC002575CC /* PhotoCollectionViewController.m */; };
+		1D21629C1882E1CB002575CC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21629B1882E1CB002575CC /* PhotoViewController.m */; };
+		1D21629F1882F9FD002575CC /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21629E1882F9FD002575CC /* PhotoCollectionViewCell.m */; };
+		1D2162A11882FC0E002575CC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D2162A01882FC0E002575CC /* AVFoundation.framework */; };
+		1D7E57961880F5D300A1093E /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EAF6941880B18000A7A6E0 /* opencv2.framework */; };
+		1D7E57991881AED800A1093E /* Stitcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E57981881AED800A1093E /* Stitcher.mm */; };
+		1D7E579B188241AA00A1093E /* image1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D7E579A188241AA00A1093E /* image1.jpg */; };
+		1D7E579F188241B800A1093E /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D7E579C188241B800A1093E /* image2.jpg */; };
+		1D7E57A0188241B800A1093E /* image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D7E579D188241B800A1093E /* image3.jpg */; };
+		1D7E57A1188241B800A1093E /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D7E579E188241B800A1093E /* image4.jpg */; };
 		A9EAF6561880AC9300A7A6E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EAF6551880AC9300A7A6E0 /* Foundation.framework */; };
 		A9EAF6581880AC9300A7A6E0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EAF6571880AC9300A7A6E0 /* CoreGraphics.framework */; };
 		A9EAF65A1880AC9300A7A6E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EAF6591880AC9300A7A6E0 /* UIKit.framework */; };
@@ -15,13 +25,14 @@
 		A9EAF6661880AC9300A7A6E0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF6651880AC9300A7A6E0 /* AppDelegate.m */; };
 		A9EAF6691880AC9300A7A6E0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9EAF6671880AC9300A7A6E0 /* Main_iPhone.storyboard */; };
 		A9EAF66C1880AC9300A7A6E0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9EAF66A1880AC9300A7A6E0 /* Main_iPad.storyboard */; };
-		A9EAF66F1880AC9300A7A6E0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF66E1880AC9300A7A6E0 /* ViewController.m */; };
+		A9EAF66F1880AC9300A7A6E0 /* PanoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF66E1880AC9300A7A6E0 /* PanoViewController.m */; };
 		A9EAF6711880AC9300A7A6E0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9EAF6701880AC9300A7A6E0 /* Images.xcassets */; };
 		A9EAF6781880AC9300A7A6E0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EAF6771880AC9300A7A6E0 /* XCTest.framework */; };
 		A9EAF6791880AC9300A7A6E0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EAF6551880AC9300A7A6E0 /* Foundation.framework */; };
 		A9EAF67A1880AC9300A7A6E0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9EAF6591880AC9300A7A6E0 /* UIKit.framework */; };
 		A9EAF6821880AC9300A7A6E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9EAF6801880AC9300A7A6E0 /* InfoPlist.strings */; };
 		A9EAF6841880AC9300A7A6E0 /* StitchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF6831880AC9300A7A6E0 /* StitchTests.m */; };
+		A9EAF68E1880AF4C00A7A6E0 /* PhotoStitch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9EAF68D1880AF4C00A7A6E0 /* PhotoStitch.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D2162971882DEAC002575CC /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
+		1D2162981882DEAC002575CC /* PhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewController.m; sourceTree = "<group>"; };
+		1D21629A1882E1CB002575CC /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		1D21629B1882E1CB002575CC /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		1D21629D1882F9FD002575CC /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		1D21629E1882F9FD002575CC /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		1D2162A01882FC0E002575CC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1D7E57971881AED800A1093E /* Stitcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stitcher.h; sourceTree = "<group>"; };
+		1D7E57981881AED800A1093E /* Stitcher.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = Stitcher.mm; sourceTree = "<group>"; };
+		1D7E579A188241AA00A1093E /* image1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpg; sourceTree = "<group>"; };
+		1D7E579C188241B800A1093E /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		1D7E579D188241B800A1093E /* image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpg; sourceTree = "<group>"; };
+		1D7E579E188241B800A1093E /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
 		A9EAF6521880AC9300A7A6E0 /* Stitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EAF6551880AC9300A7A6E0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A9EAF6571880AC9300A7A6E0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,14 +71,17 @@
 		A9EAF6651880AC9300A7A6E0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A9EAF6681880AC9300A7A6E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		A9EAF66B1880AC9300A7A6E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		A9EAF66D1880AC9300A7A6E0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A9EAF66E1880AC9300A7A6E0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A9EAF66D1880AC9300A7A6E0 /* PanoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PanoViewController.h; sourceTree = "<group>"; };
+		A9EAF66E1880AC9300A7A6E0 /* PanoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PanoViewController.m; sourceTree = "<group>"; };
 		A9EAF6701880AC9300A7A6E0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A9EAF6761880AC9300A7A6E0 /* StitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StitchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9EAF6771880AC9300A7A6E0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A9EAF67F1880AC9300A7A6E0 /* StitchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StitchTests-Info.plist"; sourceTree = "<group>"; };
 		A9EAF6811880AC9300A7A6E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A9EAF6831880AC9300A7A6E0 /* StitchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StitchTests.m; sourceTree = "<group>"; };
+		A9EAF68D1880AF4C00A7A6E0 /* PhotoStitch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhotoStitch.cpp; sourceTree = "<group>"; };
+		A9EAF6941880B18000A7A6E0 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = ../../Library/Frameworks/ios/2.4.8/opencv2.framework; sourceTree = "<group>"; };
+		A9EAF6961880B31500A7A6E0 /* PhotoStitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoStitch.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D2162A11882FC0E002575CC /* AVFoundation.framework in Frameworks */,
+				1D7E57961880F5D300A1093E /* opencv2.framework in Frameworks */,
 				A9EAF6581880AC9300A7A6E0 /* CoreGraphics.framework in Frameworks */,
 				A9EAF65A1880AC9300A7A6E0 /* UIKit.framework in Frameworks */,
 				A9EAF6561880AC9300A7A6E0 /* Foundation.framework in Frameworks */,
@@ -103,6 +132,8 @@
 		A9EAF6541880AC9300A7A6E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D2162A01882FC0E002575CC /* AVFoundation.framework */,
+				A9EAF6941880B18000A7A6E0 /* opencv2.framework */,
 				A9EAF6551880AC9300A7A6E0 /* Foundation.framework */,
 				A9EAF6571880AC9300A7A6E0 /* CoreGraphics.framework */,
 				A9EAF6591880AC9300A7A6E0 /* UIKit.framework */,
@@ -114,12 +145,23 @@
 		A9EAF65B1880AC9300A7A6E0 /* Stitch */ = {
 			isa = PBXGroup;
 			children = (
+				A9EAF68F1880B12B00A7A6E0 /* images */,
+				A9EAF6961880B31500A7A6E0 /* PhotoStitch.h */,
+				A9EAF68D1880AF4C00A7A6E0 /* PhotoStitch.cpp */,
+				1D7E57971881AED800A1093E /* Stitcher.h */,
+				1D7E57981881AED800A1093E /* Stitcher.mm */,
 				A9EAF6641880AC9300A7A6E0 /* AppDelegate.h */,
 				A9EAF6651880AC9300A7A6E0 /* AppDelegate.m */,
 				A9EAF6671880AC9300A7A6E0 /* Main_iPhone.storyboard */,
 				A9EAF66A1880AC9300A7A6E0 /* Main_iPad.storyboard */,
-				A9EAF66D1880AC9300A7A6E0 /* ViewController.h */,
-				A9EAF66E1880AC9300A7A6E0 /* ViewController.m */,
+				A9EAF66D1880AC9300A7A6E0 /* PanoViewController.h */,
+				A9EAF66E1880AC9300A7A6E0 /* PanoViewController.m */,
+				1D21629D1882F9FD002575CC /* PhotoCollectionViewCell.h */,
+				1D21629E1882F9FD002575CC /* PhotoCollectionViewCell.m */,
+				1D2162971882DEAC002575CC /* PhotoCollectionViewController.h */,
+				1D2162981882DEAC002575CC /* PhotoCollectionViewController.m */,
+				1D21629A1882E1CB002575CC /* PhotoViewController.h */,
+				1D21629B1882E1CB002575CC /* PhotoViewController.m */,
 				A9EAF6701880AC9300A7A6E0 /* Images.xcassets */,
 				A9EAF65C1880AC9300A7A6E0 /* Supporting Files */,
 			);
@@ -153,6 +195,17 @@
 				A9EAF6801880AC9300A7A6E0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9EAF68F1880B12B00A7A6E0 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1D7E579C188241B800A1093E /* image2.jpg */,
+				1D7E579D188241B800A1093E /* image3.jpg */,
+				1D7E579E188241B800A1093E /* image4.jpg */,
+				1D7E579A188241AA00A1093E /* image1.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +284,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D7E57A1188241B800A1093E /* image4.jpg in Resources */,
 				A9EAF66C1880AC9300A7A6E0 /* Main_iPad.storyboard in Resources */,
+				1D7E579B188241AA00A1093E /* image1.jpg in Resources */,
 				A9EAF6711880AC9300A7A6E0 /* Images.xcassets in Resources */,
 				A9EAF6691880AC9300A7A6E0 /* Main_iPhone.storyboard in Resources */,
+				1D7E579F188241B800A1093E /* image2.jpg in Resources */,
+				1D7E57A0188241B800A1093E /* image3.jpg in Resources */,
 				A9EAF6601880AC9300A7A6E0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,9 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9EAF66F1880AC9300A7A6E0 /* ViewController.m in Sources */,
+				A9EAF66F1880AC9300A7A6E0 /* PanoViewController.m in Sources */,
 				A9EAF6661880AC9300A7A6E0 /* AppDelegate.m in Sources */,
+				1D7E57991881AED800A1093E /* Stitcher.mm in Sources */,
+				1D2162991882DEAC002575CC /* PhotoCollectionViewController.m in Sources */,
+				A9EAF68E1880AF4C00A7A6E0 /* PhotoStitch.cpp in Sources */,
+				1D21629F1882F9FD002575CC /* PhotoCollectionViewCell.m in Sources */,
 				A9EAF6621880AC9300A7A6E0 /* main.m in Sources */,
+				1D21629C1882E1CB002575CC /* PhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +454,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Frameworks/ios/2.4.8",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stitch/Stitch-Prefix.pch";
 				INFOPLIST_FILE = "Stitch/Stitch-Info.plist";
@@ -405,6 +471,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Frameworks/ios/2.4.8",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Stitch/Stitch-Prefix.pch";
 				INFOPLIST_FILE = "Stitch/Stitch-Info.plist";
@@ -474,6 +544,7 @@
 				A9EAF6891880AC9300A7A6E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9EAF68A1880AC9300A7A6E0 /* Build configuration list for PBXNativeTarget "StitchTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +553,7 @@
 				A9EAF68C1880AC9300A7A6E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
