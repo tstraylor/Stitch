@@ -44,7 +44,7 @@
 - (UIImage*)imageCreate
 {
     CGImageRef image = self.ps->imageCreate();
-    UIImage *im = [UIImage imageWithCGImage:image scale:1.0 orientation:UIImageOrientationRight];
+    UIImage *im = [UIImage imageWithCGImage:image scale:1.0 orientation:UIImageOrientationUp];
     CGImageRelease(image);
     return im;
 }

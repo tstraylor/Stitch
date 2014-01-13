@@ -95,7 +95,12 @@
             break;
             
         default:
+#if defined(__LP64__)
+            [NSException raise:NSInvalidArgumentException format:@"Unsupported content mode: %ld", contentMode];
+#else
             [NSException raise:NSInvalidArgumentException format:@"Unsupported content mode: %d", contentMode];
+#endif
+            
     }
     
     CGSize newSize = CGSizeMake(self.size.width * ratio, self.size.height * ratio);

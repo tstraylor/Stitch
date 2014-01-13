@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1C618B1883B145001AE1EA /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C61861883B144001AE1EA /* UIImage+Alpha.m */; };
+		1D1C618C1883B145001AE1EA /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C61881883B144001AE1EA /* UIImage+Resize.m */; };
+		1D1C618D1883B145001AE1EA /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C618A1883B144001AE1EA /* UIImage+RoundedCorner.m */; };
+		1D1C618F1883BDE6001AE1EA /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1C618E1883BDE6001AE1EA /* AssetsLibrary.framework */; };
 		1D2162991882DEAC002575CC /* PhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2162981882DEAC002575CC /* PhotoCollectionViewController.m */; };
 		1D21629C1882E1CB002575CC /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21629B1882E1CB002575CC /* PhotoViewController.m */; };
 		1D21629F1882F9FD002575CC /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D21629E1882F9FD002575CC /* PhotoCollectionViewCell.m */; };
@@ -46,6 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D1C61851883B144001AE1EA /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		1D1C61861883B144001AE1EA /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		1D1C61871883B144001AE1EA /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		1D1C61881883B144001AE1EA /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		1D1C61891883B144001AE1EA /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		1D1C618A1883B144001AE1EA /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		1D1C618E1883BDE6001AE1EA /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		1D2162971882DEAC002575CC /* PhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewController.h; sourceTree = "<group>"; };
 		1D2162981882DEAC002575CC /* PhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewController.m; sourceTree = "<group>"; };
 		1D21629A1882E1CB002575CC /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
@@ -89,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1C618F1883BDE6001AE1EA /* AssetsLibrary.framework in Frameworks */,
 				1D2162A11882FC0E002575CC /* AVFoundation.framework in Frameworks */,
 				1D7E57961880F5D300A1093E /* opencv2.framework in Frameworks */,
 				A9EAF6581880AC9300A7A6E0 /* CoreGraphics.framework in Frameworks */,
@@ -110,6 +122,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D1C61841883B0EA001AE1EA /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1D1C61851883B144001AE1EA /* UIImage+Alpha.h */,
+				1D1C61861883B144001AE1EA /* UIImage+Alpha.m */,
+				1D1C61871883B144001AE1EA /* UIImage+Resize.h */,
+				1D1C61881883B144001AE1EA /* UIImage+Resize.m */,
+				1D1C61891883B144001AE1EA /* UIImage+RoundedCorner.h */,
+				1D1C618A1883B144001AE1EA /* UIImage+RoundedCorner.m */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
 		A9EAF6491880AC9300A7A6E0 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +157,7 @@
 		A9EAF6541880AC9300A7A6E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D1C618E1883BDE6001AE1EA /* AssetsLibrary.framework */,
 				1D2162A01882FC0E002575CC /* AVFoundation.framework */,
 				A9EAF6941880B18000A7A6E0 /* opencv2.framework */,
 				A9EAF6551880AC9300A7A6E0 /* Foundation.framework */,
@@ -145,6 +171,7 @@
 		A9EAF65B1880AC9300A7A6E0 /* Stitch */ = {
 			isa = PBXGroup;
 			children = (
+				1D1C61841883B0EA001AE1EA /* utilities */,
 				A9EAF68F1880B12B00A7A6E0 /* images */,
 				A9EAF6961880B31500A7A6E0 /* PhotoStitch.h */,
 				A9EAF68D1880AF4C00A7A6E0 /* PhotoStitch.cpp */,
@@ -312,12 +339,15 @@
 			files = (
 				A9EAF66F1880AC9300A7A6E0 /* PanoViewController.m in Sources */,
 				A9EAF6661880AC9300A7A6E0 /* AppDelegate.m in Sources */,
+				1D1C618B1883B145001AE1EA /* UIImage+Alpha.m in Sources */,
 				1D7E57991881AED800A1093E /* Stitcher.mm in Sources */,
 				1D2162991882DEAC002575CC /* PhotoCollectionViewController.m in Sources */,
+				1D1C618D1883B145001AE1EA /* UIImage+RoundedCorner.m in Sources */,
 				A9EAF68E1880AF4C00A7A6E0 /* PhotoStitch.cpp in Sources */,
 				1D21629F1882F9FD002575CC /* PhotoCollectionViewCell.m in Sources */,
 				A9EAF6621880AC9300A7A6E0 /* main.m in Sources */,
 				1D21629C1882E1CB002575CC /* PhotoViewController.m in Sources */,
+				1D1C618C1883B145001AE1EA /* UIImage+Resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

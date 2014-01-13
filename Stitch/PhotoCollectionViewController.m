@@ -6,10 +6,12 @@
 //  Copyright (c) 2014 Thomas Traylor. All rights reserved.
 //
 
+#import <MobileCoreServices/MobileCoreServices.h>
 #import <AVFoundation/AVFoundation.h>
 #import "PhotoCollectionViewController.h"
 #import "PhotoCollectionViewCell.h"
 #import "PanoViewController.h"
+#import "UIImage+Resize.h"
 
 @interface PhotoCollectionViewController ()
 
@@ -38,28 +40,9 @@
 	// Do any additional setup after loading the view.
     NSLog(@"[%@ %@]", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
     self.photoArray = [[NSMutableArray alloc] init];
-    UIImage *image;
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"image1" ofType:@"jpg"];
-    image = [[UIImage alloc] initWithContentsOfFile:filePath];
-    [self.photoArray addObject:image];
-    
-    filePath = [[NSBundle mainBundle] pathForResource:@"image2" ofType:@"jpg"];
-    image = [[UIImage alloc] initWithContentsOfFile:filePath];
-    [self.photoArray addObject:image];
-    
-    filePath = [[NSBundle mainBundle] pathForResource:@"image3" ofType:@"jpg"];
-    image = [[UIImage alloc] initWithContentsOfFile:filePath];
-    [self.photoArray addObject:image];
-    
-    filePath = [[NSBundle mainBundle] pathForResource:@"image4" ofType:@"jpg"];
-    image = [[UIImage alloc] initWithContentsOfFile:filePath];
-    [self.photoArray addObject:image];
-    
-    NSLog(@"[%@ %@] photoArray count: %d", NSStringFromClass([self class]), NSStringFromSelector(_cmd), self.photoArray.count);
-   
     self.photoCollectionView.delegate = self;
     self.photoCollectionView.dataSource = self;
-    //[self.photoCollectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:@"PhotoCell"];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -91,7 +74,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"[%@ %@] item: %d", NSStringFromClass([self class]), NSStringFromSelector(_cmd), indexPath.item);
+    NSLog(@"[%@ %@] item: %ld", NSStringFromClass([self class]), NSStringFromSelector(_cmd), (long)indexPath.item);
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCell" forIndexPath:indexPath];
     
     cell.photoImageView.image = (UIImage*)[self.photoArray objectAtIndex:indexPath.item];
@@ -117,7 +100,7 @@
     {
         PhotoCollectionViewCell *cell = (PhotoCollectionViewCell *)sender;
         NSIndexPath *indexPath = [self.photoCollectionView indexPathForCell:cell];
-        NSLog(@"[%@ %@] Number of sections: %d Number of rows: %d.", NSStringFromClass([self class]), NSStringFromSelector(_cmd),indexPath.section, indexPath.row);
+        NSLog(@"[%@ %@] Number of sections: %ld Number of rows: %ld.", NSStringFromClass([self class]), NSStringFromSelector(_cmd),(long)indexPath.section, (long)indexPath.row);
         UIImage *image = [self.photoArray objectAtIndex:indexPath.item];
 
         [segue.destinationViewController setImage:image];
@@ -125,7 +108,79 @@
     }
     else if([segue.identifier isEqualToString:@"PanoView"])
     {
-        [segue.destinationViewController setPhotos:self.photoArray];
+            [segue.destinationViewController setPhotos:self.photoArray];
+    }
+    
+}
+
+- (IBAction)panoButtonPressed:(UIBarButtonItem *)sender
+{
+    if(self.photoArray.count > 0)
+    {
+        [self performSegueWithIdentifier:@"PanoView" sender:self];
+    }
+    else
+    {
+        UIAlertView *noPhotos = [[UIAlertView alloc] initWithTitle:@"No Photos Found"
+                                                           message:@"There are no photos to create a pano image."
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil, nil];
+        [noPhotos show];
+        
+    }
+
+}
+
+- (IBAction)trashPhotos:(UIBarButtonItem *)sender
+{
+    [self.photoArray removeAllObjects];
+    [self.photoCollectionView reloadData];
+}
+
+- (IBAction)takePhoto:(UIBarButtonItem *)sender
+{
+    NSLog(@"[%@ %@]", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+    NSArray *mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    
+    if ([mediaTypes containsObject:(NSString *)kUTTypeImage])
+    {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        picker.mediaTypes = [NSArray arrayWithObject:(NSString *)kUTTypeImage];
+        picker.allowsEditing = NO;
+        [self presentViewController:picker animated:YES completion:nil];
     }
 }
+
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    UIImage *photo = [info objectForKey:UIImagePickerControllerEditedImage];
+    
+    if(!photo)
+        photo = [info objectForKey:UIImagePickerControllerOriginalImage];
+
+    if(photo)
+    {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            [self.photoArray addObject:[photo resizedImage:CGSizeMake(480.0, 640.0)
+                                      interpolationQuality:kCGInterpolationDefault]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.photoCollectionView reloadData];
+            });
+        });
+    }
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

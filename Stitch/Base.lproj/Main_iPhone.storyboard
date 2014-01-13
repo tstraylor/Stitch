@@ -20,15 +20,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7Ez-vb-2Ko">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="7Ez-vb-2Ko">
                                 <rect key="frame" x="142" y="265" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="IIx-av-6Zn"/>
+                    <navigationItem key="navigationItem" id="IIx-av-6Zn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="cLJ-3O-Rgt">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="vXZ-lx-hvc" id="LGJ-eJ-fH5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="7Ez-vb-2Ko" id="WoF-lX-VIZ"/>
                         <outlet property="imageView" destination="GsE-8M-WJK" id="X0P-zQ-DvZ"/>
@@ -36,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="-675"/>
+            <point key="canvasLocation" x="1454" y="-1115"/>
         </scene>
         <!--Photo Collection View Controller-->
         <scene sceneID="SZM-jl-Ds7">
@@ -88,11 +93,21 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="camera" id="KNG-d3-gaw"/>
+                                    <barButtonItem systemItem="camera" id="KNG-d3-gaw">
+                                        <connections>
+                                            <action selector="takePhoto:" destination="f8W-Px-jdj" id="IfY-K0-Cgw"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="znc-sb-bm1"/>
+                                    <barButtonItem systemItem="trash" id="X4z-q1-bor">
+                                        <connections>
+                                            <action selector="trashPhotos:" destination="f8W-Px-jdj" id="aN7-n9-8Xq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="unT-7W-L7A"/>
                                     <barButtonItem title="Pano" id="IKg-Mr-p3x">
                                         <connections>
-                                            <segue destination="vXZ-lx-hvc" kind="push" identifier="PanoView" id="hhZ-GY-aAh"/>
+                                            <action selector="panoButtonPressed:" destination="f8W-Px-jdj" id="h9m-E5-QZC"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -103,6 +118,7 @@
                     <navigationItem key="navigationItem" id="PKf-2K-7Pv"/>
                     <connections>
                         <outlet property="photoCollectionView" destination="4d0-XI-c3d" id="YQc-uw-h1t"/>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="PanoView" id="Vjy-rQ-vqd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jAy-lP-Xj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijR-ui-Wh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="40"/>
+            <point key="canvasLocation" x="1454" y="-288"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n9O-00-HFY">

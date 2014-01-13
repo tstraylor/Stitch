@@ -34,7 +34,7 @@ void PhotoStitch::addImage(CGImageRef image)
     size_t cols = CGImageGetWidth(image);
     size_t rows = CGImageGetHeight(image);
     
-    cv::Mat cvmat(rows, cols, CV_8UC4);
+    cv::Mat cvmat((int)rows, (int)cols, CV_8UC4);
 
     CGContextRef contextRef = CGBitmapContextCreate(cvmat.data, cols, rows, 8,
                                                     cvmat.step[0], colorSpace,
@@ -44,7 +44,7 @@ void PhotoStitch::addImage(CGImageRef image)
     CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows), image);
     CGContextRelease(contextRef);
 
-    cv::Mat rgbmat(rows, cols, CV_8UC3); // 8 bits per component, 3 channels
+    cv::Mat rgbmat((int)rows, (int)cols, CV_8UC3); // 8 bits per component, 3 channels
     cvtColor(cvmat, rgbmat, CV_RGBA2RGB, 3);
     
     std::cout << "rgbmat cols: " << rgbmat.cols << std::endl;
@@ -90,6 +90,7 @@ CGImageRef PhotoStitch::imageCreate()
                                         kCGImageAlphaNone | kCGBitmapByteOrderDefault,
                                         provider, NULL, false, kCGRenderingIntentDefault);
     
+    CFRelease(data);
     CGDataProviderRelease(provider);
     CGColorSpaceRelease(colorSpace);
     imageArray.clear();
