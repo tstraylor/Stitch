@@ -37,6 +37,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="7Ez-vb-2Ko" id="WoF-lX-VIZ"/>
                         <outlet property="imageView" destination="GsE-8M-WJK" id="X0P-zQ-DvZ"/>
+                        <outlet property="saveButton" destination="cLJ-3O-Rgt" id="Gfv-dU-pz0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -55,7 +56,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4d0-XI-c3d">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4d0-XI-c3d">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,7 +90,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWh-ue-nS3">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWh-ue-nS3">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
@@ -114,10 +115,21 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4d0-XI-c3d" firstAttribute="bottom" secondItem="wWh-ue-nS3" secondAttribute="bottom" id="9wy-Xb-I4P"/>
+                            <constraint firstAttribute="trailing" secondItem="4d0-XI-c3d" secondAttribute="trailing" id="ENU-Xq-51Q"/>
+                            <constraint firstItem="4d0-XI-c3d" firstAttribute="top" secondItem="No5-Xh-dEc" secondAttribute="top" id="Ofy-f4-aQj"/>
+                            <constraint firstItem="4d0-XI-c3d" firstAttribute="leading" secondItem="No5-Xh-dEc" secondAttribute="leading" id="kka-BR-77i"/>
+                            <constraint firstItem="4d0-XI-c3d" firstAttribute="trailing" secondItem="wWh-ue-nS3" secondAttribute="trailing" id="ne4-OS-VQX"/>
+                            <constraint firstItem="4d0-XI-c3d" firstAttribute="leading" secondItem="wWh-ue-nS3" secondAttribute="leading" id="oTN-P2-WKR"/>
+                            <constraint firstAttribute="bottom" secondItem="4d0-XI-c3d" secondAttribute="bottom" id="pQW-9H-UZ4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PKf-2K-7Pv"/>
                     <connections>
                         <outlet property="photoCollectionView" destination="4d0-XI-c3d" id="YQc-uw-h1t"/>
+                        <outlet property="toolBar" destination="wWh-ue-nS3" id="9xH-xR-gA4"/>
+                        <outlet property="trashButton" destination="X4z-q1-bor" id="MnB-uM-LJz"/>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="PanoView" id="Vjy-rQ-vqd"/>
                     </connections>
                 </viewController>
