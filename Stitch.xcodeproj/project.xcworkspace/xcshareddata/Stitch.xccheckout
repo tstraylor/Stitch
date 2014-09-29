@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>940DD20B-5F0A-413A-9018-54B7A31ED4DE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Stitch</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6141A6B5-BBC4-43AB-9639-CA55BEF98521</key>
+		<string>https://github.com/tstraylor/Stitch.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Stitch.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6141A6B5-BBC4-43AB-9639-CA55BEF98521</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tstraylor/Stitch.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6141A6B5-BBC4-43AB-9639-CA55BEF98521</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6141A6B5-BBC4-43AB-9639-CA55BEF98521</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Stitch</string>
+		</dict>
+	</array>
+</dict>
+</plist>
